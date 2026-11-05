@@ -1,8 +1,12 @@
-const CACHE_NAME = 'aurahealth-v1';
+const CACHE_NAME = 'aurahealth-v2';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './icon.svg',
+  './icon-192.png',
+  './icon-512.png',
+  './apple-touch-icon.png',
+  './favicon.png',
   './manifest.webmanifest'
 ];
 

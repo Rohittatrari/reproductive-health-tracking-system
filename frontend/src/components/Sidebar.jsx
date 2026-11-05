@@ -13,7 +13,8 @@ import {
   User,
   LogOut,
   X,
-  Sparkles
+  Sparkles,
+  Smartphone
 } from 'lucide-react';
 import { api } from '../api';
 
@@ -38,6 +39,11 @@ export default function Sidebar({ isOpen, onClose }) {
   const handleLogout = () => {
     api.logout();
     navigate('/login');
+  };
+
+  const handleOpenInstall = () => {
+    window.dispatchEvent(new CustomEvent('open-install-guide'));
+    onClose?.();
   };
 
   return (
@@ -109,6 +115,25 @@ export default function Sidebar({ isOpen, onClose }) {
             );
           })}
         </nav>
+
+        {/* Save to Home Screen Button */}
+        <div className="px-4 py-3 border-t border-purple-50">
+          <button
+            type="button"
+            onClick={handleOpenInstall}
+            className="w-full flex items-center justify-between p-2.5 rounded-2xl bg-linear-to-r from-purple-50 to-pink-50 text-purple-950 border border-purple-200 hover:border-pink-300 hover:shadow-xs transition-all text-xs font-bold"
+          >
+            <div className="flex items-center gap-2.5">
+              <div className="w-7 h-7 rounded-lg bg-white shadow-2xs flex items-center justify-center text-purple-600 border border-purple-100">
+                <Smartphone className="w-4 h-4" />
+              </div>
+              <span>Add to Home Screen</span>
+            </div>
+            <span className="text-[10px] bg-purple-600 text-white px-2 py-0.5 rounded-full font-bold">
+              Install
+            </span>
+          </button>
+        </div>
 
         {/* User Footer Card */}
         <div className="p-4 border-t border-purple-50 bg-purple-50/40">

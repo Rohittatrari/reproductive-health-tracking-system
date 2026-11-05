@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Plus, Droplet, Activity } from 'lucide-react';
+import { Menu, Plus, Droplet, Activity, Smartphone } from 'lucide-react';
 
 export default function Header({
   title,
@@ -10,6 +10,10 @@ export default function Header({
   cycleDay,
   phaseName
 }) {
+  const handleOpenInstall = () => {
+    window.dispatchEvent(new CustomEvent('open-install-guide'));
+  };
+
   return (
     <header className="sticky top-0 z-30 bg-white/80 backdrop-blur-md border-b border-purple-100 px-4 sm:px-8 py-4">
       <div className="flex items-center justify-between gap-4">
@@ -41,6 +45,15 @@ export default function Header({
               <span>Day {cycleDay} • {phaseName}</span>
             </div>
           )}
+
+          <button
+            onClick={handleOpenInstall}
+            className="hidden sm:flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-linear-to-r from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100 text-purple-900 border border-purple-200 transition-all shadow-2xs"
+            title="Save / Add to Home Screen"
+          >
+            <Smartphone className="w-4 h-4 text-purple-600" />
+            <span>Install App</span>
+          </button>
 
           {onOpenPeriodModal && (
             <button
