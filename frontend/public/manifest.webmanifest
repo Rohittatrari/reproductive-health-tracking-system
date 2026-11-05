@@ -1,0 +1,20 @@
+{
+  "name": "AuraHealth - Reproductive Health System",
+  "short_name": "AuraHealth",
+  "description": "Modern, secure reproductive health tracking, cycle monitoring & fertility awareness",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#faf7fd",
+  "theme_color": "#7c3aed",
+  "categories": ["health", "medical", "lifestyle"],
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

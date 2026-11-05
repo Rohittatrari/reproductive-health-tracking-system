@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import PeriodLogModal from './components/PeriodLogModal';
 import SymptomLogModal from './components/SymptomLogModal';
+import InstallPrompt from './components/InstallPrompt';
 
 import DashboardPage from './pages/DashboardPage';
 import CycleTrackingPage from './pages/CycleTrackingPage';
@@ -123,6 +124,9 @@ function AppLayout() {
           window.location.reload();
         }}
       />
+
+      {/* PWA Add to Home Screen Banner */}
+      <InstallPrompt />
     </div>
   );
 }
